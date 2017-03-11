@@ -37,14 +37,15 @@ public class MainApp
 		
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext(
 				"./edu/zju/TestDatabase/redis/MyBeans.xml");
-
+		System.out.println("ClassPathXmlApplicationContext classloader = "+context.getClassLoader());
+		
 		ApplicationContext cont = new FileSystemXmlApplicationContext(
 				"src/main/java/edu/zju/TestDatabase/redis/MyBeans.xml");
-
+		System.out.println("FileSystemXmlApplicationContext classloader = "+cont.getClassLoader());
 		/**
 		 * 如果对应的bean的为singleton则下面的比较相等,如果为prototype则不等<br>
 		 */
-		HelloWorld o = (HelloWorld) context.getBean("he");
+		HelloWorld o = (HelloWorld) cont.getBean("he");
 		HelloWorld obj = (HelloWorld) context.getBean("he");
 		System.out.println(o == obj);
 		obj.getMessage();
