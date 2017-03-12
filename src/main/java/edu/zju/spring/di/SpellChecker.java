@@ -1,4 +1,4 @@
-package edu.zju.TestDatabase.redis.di;
+package edu.zju.spring.di;
 
 public class SpellChecker
 {

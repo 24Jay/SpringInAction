@@ -1,4 +1,4 @@
-package edu.zju.TestDatabase.redis;
+package edu.zju.spring;
 
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
@@ -29,16 +29,16 @@ public class MainApp
 		 * 它用 org.springframework.beans.factory.BeanFactory 接口来定义。<br>
 		 */
 		XmlBeanFactory factory = new XmlBeanFactory(
-				new ClassPathResource("./edu/zju/TestDatabase/redis/MyBeans.xml"));
+				new ClassPathResource("./edu/zju/spring/MyBeans.xml"));
 		HelloWorld ob = (HelloWorld) factory.getBean("hello");
 		ob.getMessage();
 
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext(
-				"./edu/zju/TestDatabase/redis/MyBeans.xml");
+				"./edu/zju/spring/MyBeans.xml");
 		AbstractApplicationContext conte = new ClassPathXmlApplicationContext(
-				"./edu/zju/TestDatabase/redis/MyBeans.xml");
+				"./edu/zju/spring/MyBeans.xml");
 		ApplicationContext cont = new FileSystemXmlApplicationContext(
-				"src/main/java/edu/zju/TestDatabase/redis/MyBeans.xml");
+				"src/main/java/edu/zju/spring/MyBeans.xml");
 		System.out.println(
 				"ClassPathXmlApplicationContext classloader = " + context.getClassLoader());
 		System.out

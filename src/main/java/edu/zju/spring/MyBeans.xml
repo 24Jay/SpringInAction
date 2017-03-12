@@ -4,22 +4,22 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-	<bean id="he" class="edu.zju.TestDatabase.redis.HelloWorld" scope="singleton"
+	<bean id="he" class="edu.zju.spring.HelloWorld" scope="singleton"
 		init-method="myInit" destroy-method="myDestroy">
 		<property name="message" value="Hello World! This is Jay" />
 	</bean>
 
-	<bean id="hello" class="edu.zju.TestDatabase.redis.HelloChina"
-		lazy-init="true" scope="prototype" parent="he">
+	<bean id="hello" class="edu.zju.spring.HelloChina" lazy-init="true"
+		scope="prototype" parent="he">
 		<property name="message" value="魔教教主" />
 	</bean>
 
 
-	<bean id="che" class="edu.zju.TestDatabase.redis.di.SpellChecker">
+	<bean id="che" class="edu.zju.spring.di.SpellChecker">
 		<constructor-arg name="res" value="检查有效" />
 	</bean>
 
-	<bean id="te" class="edu.zju.TestDatabase.redis.di.TextEditor">
+	<bean id="te" class="edu.zju.spring.di.TextEditor">
 		<constructor-arg ref="che" />
 		<constructor-arg type="java.lang.String" value="类型检查合法" />
 		<property name="count" value="55" />
@@ -27,11 +27,11 @@
 
 
 
-	<bean id="teditor" class="edu.zju.TestDatabase.redis.di.TextEditor">
+	<bean id="teditor" class="edu.zju.spring.di.TextEditor">
 		<constructor-arg type="java.lang.String" value="类型检查合法" />
 		<property name="count" value="55" />
 		<property name="checker">
-			<bean id="chee" class="edu.zju.TestDatabase.redis.di.SpellChecker">
+			<bean id="chee" class="edu.zju.spring.di.SpellChecker">
 				<constructor-arg name="res" value="This is a inner bean!" />
 			</bean>
 		</property>

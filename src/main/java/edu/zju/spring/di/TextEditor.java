@@ -1,4 +1,4 @@
-package edu.zju.TestDatabase.redis.di;
+package edu.zju.spring.di;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -56,7 +56,7 @@ public class TextEditor
 	public static void main(String[] ar)
 	{
 		ApplicationContext context = new ClassPathXmlApplicationContext(
-				"./edu/zju/TestDatabase/redis/MyBeans.xml");
+				"./edu/zju/spring/MyBeans.xml");
 		SpellChecker checker = (SpellChecker) context.getBean("che");
 		System.out.println(
 				"\n********************ConstructorBasedDependencyInjection***************");

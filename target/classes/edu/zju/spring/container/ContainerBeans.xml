@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-	<bean id="containers" class="edu.zju.TestDatabase.redis.container.Containers"
+	<bean id="containers" class="edu.zju.spring.container.Containers"
 		scope="singleton">
 		<property name="list">
 			<list>

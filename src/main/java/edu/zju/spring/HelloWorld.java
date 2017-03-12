@@ -1,4 +1,4 @@
-package edu.zju.TestDatabase.redis;
+package edu.zju.spring;
 
 public class HelloWorld
 {

@@ -1,8 +1,5 @@
-package edu.zju.TestDatabase.redis.container;
+package edu.zju.spring.container;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
@@ -64,7 +61,7 @@ public class Containers
 	public static void main(String[] ra)
 	{
 		ApplicationContext ctx = new ClassPathXmlApplicationContext(
-				"./edu/zju/TestDatabase/redis/container/ContainerBeans.xml");
+				"./edu/zju/spring/container/ContainerBeans.xml");
 		
 		Containers c = (Containers) ctx.getBean("containers");
 		System.out.println(c.getList());

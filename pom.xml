@@ -3,12 +3,13 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>edu.zju</groupId>
-	<artifactId>TestDatabase</artifactId>
+	<artifactId>spring</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>TestDatabase</name>
+	<name>spring</name>
 	<url>http://maven.apache.org</url>
+
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -39,6 +40,17 @@
 			<groupId>redis.clients</groupId>
 			<artifactId>jedis</artifactId>
 			<version>2.1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>4.3.5.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.25</version>
 		</dependency>
 	</dependencies>
 
