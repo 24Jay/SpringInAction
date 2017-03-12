@@ -2,7 +2,7 @@ package edu.zju.TestDatabase.redis;
 
 public class HelloWorld
 {
-	private String message;
+	protected String message;
 
 	public void setMessage(String message)
 	{

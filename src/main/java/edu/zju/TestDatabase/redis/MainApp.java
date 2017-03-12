@@ -22,7 +22,7 @@ public class MainApp
 		 * ClassPathXmlApplicationContext<br>
 		 * WebXmlApplicationContext<br>
 		 */
-		
+
 		/**
 		 * Spring BeanFactory 容器:<br>
 		 * 它是最简单的容器，给 DI 提供了基本的支持，<br>
@@ -32,20 +32,21 @@ public class MainApp
 				new ClassPathResource("./edu/zju/TestDatabase/redis/MyBeans.xml"));
 		HelloWorld ob = (HelloWorld) factory.getBean("hello");
 		ob.getMessage();
-		
-		
-		
+
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext(
 				"./edu/zju/TestDatabase/redis/MyBeans.xml");
-		System.out.println("ClassPathXmlApplicationContext classloader = "+context.getClassLoader());
-		
+		AbstractApplicationContext conte = new ClassPathXmlApplicationContext(
+				"./edu/zju/TestDatabase/redis/MyBeans.xml");
 		ApplicationContext cont = new FileSystemXmlApplicationContext(
 				"src/main/java/edu/zju/TestDatabase/redis/MyBeans.xml");
-		System.out.println("FileSystemXmlApplicationContext classloader = "+cont.getClassLoader());
+		System.out.println(
+				"ClassPathXmlApplicationContext classloader = " + context.getClassLoader());
+		System.out
+				.println("FileSystemXmlApplicationContext classloader = " + cont.getClassLoader());
 		/**
 		 * 如果对应的bean的为singleton则下面的比较相等,如果为prototype则不等<br>
 		 */
-		HelloWorld o = (HelloWorld) cont.getBean("he");
+		HelloWorld o = (HelloWorld) conte.getBean("he");
 		HelloWorld obj = (HelloWorld) context.getBean("he");
 		System.out.println(o == obj);
 		obj.getMessage();

@@ -9,9 +9,20 @@
 		<property name="message" value="Hello World! This is Jay" />
 	</bean>
 
-	<bean id="hello" class="edu.zju.TestDatabase.redis.HelloWorld"
-		lazy-init="true" scope="prototype">
+	<bean id="hello" class="edu.zju.TestDatabase.redis.HelloChina"
+		lazy-init="true" scope="prototype" parent="he">
 		<property name="message" value="魔教教主" />
+	</bean>
+
+
+	<bean id="che" class="edu.zju.TestDatabase.redis.di.SpellChecker">
+		<constructor-arg name="res" value="检查有效" />
+	</bean>
+	
+	<bean id="te" class="edu.zju.TestDatabase.redis.di.TextEditor">
+		<constructor-arg ref="che" />
+		<constructor-arg type="java.lang.String" value="类型检查合法" />
+		<property name="count" value="55"/>
 	</bean>
 
 </beans>
