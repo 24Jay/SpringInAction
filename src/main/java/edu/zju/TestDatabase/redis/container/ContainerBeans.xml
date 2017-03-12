@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="containers" class="edu.zju.TestDatabase.redis.container.Containers"
+		scope="singleton">
+		<property name="list">
+			<list>
+				<value>China</value>
+				<value>America</value>
+				<value>Germany</value>
+				<value>Japan</value>
+			</list>
+		</property>
+
+		<property name="set">
+			<set>
+				<value>Wuhan</value>
+				<value>Hangzhou</value>
+				<value>Beijing</value>
+				<value>Shenzhen</value>
+				<value>Shenzhen</value>
+			</set>
+		</property>
+
+		<property name="map">
+			<map>
+				<entry key="1" value="Wuhan" />
+				<entry key="2" value="Hanghzou" />
+				<entry key="3" value="Beijing" />
+			</map>
+		</property>
+
+		<property name="properties">
+			<props>
+				<prop key="one">spring</prop>
+				<prop key="two">maven</prop>
+				<prop key="three">git</prop>
+			</props>
+		</property>
+
+	</bean>
+
+</beans>

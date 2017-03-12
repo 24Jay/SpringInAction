@@ -21,6 +21,11 @@ public class TextEditor
 		this.conclu = result;
 	}
 
+	public TextEditor(String result)
+	{
+		this.conclu = result;
+	}
+
 	/**
 	 * Setter-based dependency injection:<br>
 	 * 基于 setter 方法的 DI 是通过在调用无参数的构造函数或无参数的静态工厂方法实例化bean<br>
@@ -43,13 +48,26 @@ public class TextEditor
 		checker.checkSpelling();
 	}
 
+	public void setChecker(SpellChecker checker)
+	{
+		this.checker = checker;
+	}
+
 	public static void main(String[] ar)
 	{
 		ApplicationContext context = new ClassPathXmlApplicationContext(
 				"./edu/zju/TestDatabase/redis/MyBeans.xml");
 		SpellChecker checker = (SpellChecker) context.getBean("che");
+		System.out.println(
+				"\n********************ConstructorBasedDependencyInjection***************");
 		checker.checkSpelling();
+
+		System.out.println("\n********************SetterBasedDependencyInjection***************");
 		TextEditor te = (TextEditor) context.getBean("te");
 		te.checkSpelling();
+
+		System.out.println("\n********************InnerBean***************");
+		TextEditor innerBean = (TextEditor) context.getBean("teditor");
+		innerBean.checkSpelling();
 	}
 }

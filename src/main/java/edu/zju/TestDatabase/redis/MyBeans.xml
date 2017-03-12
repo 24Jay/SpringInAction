@@ -18,11 +18,23 @@
 	<bean id="che" class="edu.zju.TestDatabase.redis.di.SpellChecker">
 		<constructor-arg name="res" value="检查有效" />
 	</bean>
-	
+
 	<bean id="te" class="edu.zju.TestDatabase.redis.di.TextEditor">
 		<constructor-arg ref="che" />
 		<constructor-arg type="java.lang.String" value="类型检查合法" />
-		<property name="count" value="55"/>
+		<property name="count" value="55" />
+	</bean>
+
+
+
+	<bean id="teditor" class="edu.zju.TestDatabase.redis.di.TextEditor">
+		<constructor-arg type="java.lang.String" value="类型检查合法" />
+		<property name="count" value="55" />
+		<property name="checker">
+			<bean id="chee" class="edu.zju.TestDatabase.redis.di.SpellChecker">
+				<constructor-arg name="res" value="This is a inner bean!" />
+			</bean>
+		</property>
 	</bean>
 
 </beans>
