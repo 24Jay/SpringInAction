@@ -12,17 +12,17 @@ public class SingerNamedParameterJdbcTemplate implements SingerDAO
 	private DataSource dataSource;
 
 	private NamedParameterJdbcTemplate jdbcTemplate;
-	
+
 	public void setDataSource(DataSource ds)
 	{
-		// TODO Auto-generated method stub
-		
+		this.dataSource = ds;
+		this.jdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
 	}
 
 	public void create(String name)
 	{
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public Singer getSinger(Integer id)
@@ -33,8 +33,9 @@ public class SingerNamedParameterJdbcTemplate implements SingerDAO
 
 	public List<Singer> listSingers()
 	{
-		// TODO Auto-generated method stub
-		return null;
+		final String SQL = "select * from singers";
+		List<Singer> list = jdbcTemplate.query(SQL, new SingerMapper());
+		return list;
 	}
 
 }

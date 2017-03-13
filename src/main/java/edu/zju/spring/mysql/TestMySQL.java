@@ -22,7 +22,12 @@ public class TestMySQL
 		while (it.hasNext())
 		{
 			Singer s = it.next();
-			System.out.println(s);
+			System.out.println("JDBCTemplate = "+s);
 		}
+		
+		SingerNamedParameterJdbcTemplate named = (SingerNamedParameterJdbcTemplate) context.getBean("namedTemplate");
+		List<Singer> list = named.listSingers();
+		for(Singer s :list)
+			System.out.println("namedParameterJdbcTemplate = "+ s);
 	}
 }
